@@ -49,6 +49,7 @@ const datepicker = (props) => {
         }
         maximumDate={new Date(moment().format("YYYY-MM-DD"))}
         onChange={Platform.OS === "ios" ? onChange : onAndroidChange}
+        display={Platform.OS === "ios" ? "spinner" : "default"}
       />
     );
   };
@@ -101,14 +102,14 @@ const datepicker = (props) => {
                       onPress={onCancelPress}
                       style={[styles.btnText, styles.btnCancel]}
                     >
-                      <Text>Cancel</Text>
+                      <Text style={styles.button}>Cancel</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
                       underlayColor={"transparent"}
                       onPress={onDonePress}
                       style={[styles.btnText, styles.btnDone]}
                     >
-                      <Text>Done</Text>
+                      <Text style={styles.button}>Done</Text>
                     </TouchableHighlight>
                   </View>
                 </TouchableHighlight>
@@ -142,6 +143,9 @@ const styles = StyleSheet.create({
   },
   btnDone: {
     right: 0,
+  },
+  button: {
+    fontWeight: "bold",
   },
 });
 

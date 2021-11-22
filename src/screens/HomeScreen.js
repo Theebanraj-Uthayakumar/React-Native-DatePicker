@@ -14,7 +14,7 @@ const HomeScreen = () => {
             borderColor: "gray",
             borderWidth: 1,
           }}
-          // onDateChange={(value) => console.log("Date Changed:" + value)}
+          onDateChange={(value) => console.log("Date Changed:" + value)}
         />
       </View>
     </View>
